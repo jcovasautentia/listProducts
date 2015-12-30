@@ -9,6 +9,7 @@
 		}
 	},
 	"dependencies": {
-		"tns-core-modules": "1.5.1"
+		"tns-core-modules": "1.5.1",
+		"typescript": "1.7.5"
 	}
 }
