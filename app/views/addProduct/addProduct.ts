@@ -1,12 +1,11 @@
 import observable = require("data/observable");
 import frameModule = require("ui/frame");
 
-
-export function loaded(){
+export function loaded() {
   console.log("vista cargada");
 };
 
-export function goToList(){
+export function goToList() {
   console.log("a la lista");
   frameModule.topmost().navigate("views/listProducts/listProducts");
 };

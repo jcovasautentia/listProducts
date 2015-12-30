@@ -1,3 +1,8 @@
-class Name {
-    
+export class Product {
+  name: string;
+  price: number;
+  photo: Object;//??
+  constructor() {
+
+  }
 }
