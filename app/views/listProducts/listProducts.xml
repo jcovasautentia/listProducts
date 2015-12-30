@@ -1,22 +1,16 @@
 <Page loaded="loaded">
     <Page.actionBar>
-        <ActionBar title="Groceries">
-            <ActionBar.actionItems>
-                <ActionItem text="Share" tap="share" ios.position="right" />
-            </ActionBar.actionItems>
+        <ActionBar title="Products">
         </ActionBar>
     </Page.actionBar>
-    <GridLayout rows="auto, *" columns="2*, *">
-        <TextField id="product" text="{{ product }}" hint="Enter a product item" row="0" col="0" />
-        <Button text="Add" tap="add" row="0" col="1" />
+    <StackLayout orientation="vertical">
         <ListView items="{{ productsList }}" id="productsList" row="1" colSpan="2">
             <ListView.itemTemplate>
                 <GridLayout columns="*, auto">
                     <Label text="{{ name }}"/>
-                    <Image src="res://ic_menu_delete" ios:visibility="collapsed" col="1" tap="delete" />
+                    <Label text="{{ price }}"/>
                 </GridLayout>
             </ListView.itemTemplate>
         </ListView>
-        <ActivityIndicator busy="{{ isLoading }}" rowSpan="2" colSpan="2" />
-    </GridLayout>
+    </StackLayout>
 </Page>
