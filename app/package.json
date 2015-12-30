@@ -6,7 +6,7 @@
     "name":"Telerik",
     "email":"support@telerik.com"
   },
-  "description":"Aplicación de prueba para autentia"
+  "description":"Aplicación de prueba para autentia",
   "license":"Apache-2.0",
   "keywords":[
     "nativescript"

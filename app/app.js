@@ -1,0 +1,5 @@
+var application = require("application");
+application.mainModule = "./views/addProduct/addProduct";
+application.cssFile = "./app.css";
+application.start();
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXBwLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiYXBwLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLElBQU8sV0FBVyxXQUFXLGFBQWEsQ0FBQyxDQUFDO0FBQzVDLFdBQVcsQ0FBQyxVQUFVLEdBQUcsK0JBQStCLENBQUM7QUFDekQsV0FBVyxDQUFDLE9BQU8sR0FBRyxXQUFXLENBQUM7QUFDbEMsV0FBVyxDQUFDLEtBQUssRUFBRSxDQUFDIn0=

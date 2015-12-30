@@ -1,3 +1,5 @@
+platforms/*
+node-modules/*
 platforms/android/build.gradle
 platforms/android/gradle.properties
 platforms/android/gradlew
@@ -522,3 +524,4 @@ node_modules/tns-core-modules/xhr/xhr.js
 node_modules/tns-core-modules/xml/package.json
 node_modules/tns-core-modules/xml/xml.d.ts
 node_modules/tns-core-modules/xml/xml.js
+node_modules/*

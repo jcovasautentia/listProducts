@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "inlineSourceMap": true,
+    "experimentalDecorators": true
+  },
+  "files": [
+    "node_modules/tns-core-modules/tns-core-modules.d.ts",
+    "app/app.ts",
+    "app/references.d.ts",
+    "app/shared/models/product.ts",
+    "app/views/addProduct/addProduct.ts"
+  ],
+  "filesGlob": [
+    "node_modules/tns-core-modules/tns-core-modules.d.ts",
+    "app/**/*.ts"
+  ],
+  "atom": {
+    "rewriteTsconfig": true
+  }
+}
