@@ -1,5 +1,6 @@
+"use strict";
 var application = require("application");
 application.mainModule = "./views/addProduct/addProduct";
-application.cssFile = "./app.css";
+application.cssFile = "./shared/css/app.css";
 application.start();
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXBwLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiYXBwLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLElBQU8sV0FBVyxXQUFXLGFBQWEsQ0FBQyxDQUFDO0FBQzVDLFdBQVcsQ0FBQyxVQUFVLEdBQUcsK0JBQStCLENBQUM7QUFDekQsV0FBVyxDQUFDLE9BQU8sR0FBRyxXQUFXLENBQUM7QUFDbEMsV0FBVyxDQUFDLEtBQUssRUFBRSxDQUFDIn0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXBwLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiYXBwLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSxJQUFPLFdBQVcsV0FBVyxhQUFhLENBQUMsQ0FBQztBQUM1QyxXQUFXLENBQUMsVUFBVSxHQUFHLCtCQUErQixDQUFDO0FBQ3pELFdBQVcsQ0FBQyxPQUFPLEdBQUcsc0JBQXNCLENBQUM7QUFDN0MsV0FBVyxDQUFDLEtBQUssRUFBRSxDQUFDIn0=
