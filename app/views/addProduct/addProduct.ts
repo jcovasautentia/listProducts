@@ -4,16 +4,13 @@ import ProductModel = require("../../shared/models/product");
 import imageModule = require("ui/image");
 import cameraModule = require("camera");
 
-var product = new ProductModel();
-var pageData = new observableModule.Observable({
-  product: product
-
-})
+var product = new ProductModel("prueba");
 
 export function loaded(args: any) {
   var page = args.object;
-  page.bindingContext = pageData;
-  console.log("vista cargada");
+  page.bindingContext = product;
+  product.image = page.getViewById("productImage");
+  console.log("vista cargada " + product.name);
 };
 
 export function goToList() {
@@ -25,10 +22,9 @@ export function goToList() {
   });
 };
 
-export function selectImage() {
+export function selectImage(args: any) {
   cameraModule.takePicture({width: 300, height: 300, keepAspectRatio: true}).then(picture => {
       console.log("Result is an image source instance");
-      product.image = new imageModule.Image();
-      product.image = picture;
+      product.image.imageSource = picture;
   });
 }
