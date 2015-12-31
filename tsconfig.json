@@ -1,16 +1,20 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es6",
+    "target": "es5",
     "inlineSourceMap": true,
     "experimentalDecorators": true
   },
   "files": [
-    "node_modules/tns-core-modules/tns-core-modules.d.ts",
     "app/app.ts",
-    "app/references.d.ts"
+    "app/references.d.ts",
+    "app/shared/models/product.ts",
+    "app/views/addProduct/addProduct.ts",
+    "app/views/listProducts/listProducts.ts",
+    "node_modules/tns-core-modules/tns-core-modules.d.ts"
   ],
   "filesGlob": [
+    "app/**/*.ts",
     "node_modules/tns-core-modules/tns-core-modules.d.ts",
     "app/*.ts"
   ],

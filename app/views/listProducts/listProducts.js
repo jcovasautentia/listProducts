@@ -1,0 +1,6 @@
+function pageNavigatedTo(args) {
+    var page = args.object;
+    page.bindingContext = page.navigationContext;
+}
+exports.pageNavigatedTo = pageNavigatedTo;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibGlzdFByb2R1Y3RzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibGlzdFByb2R1Y3RzLnRzIl0sIm5hbWVzIjpbInBhZ2VOYXZpZ2F0ZWRUbyJdLCJtYXBwaW5ncyI6IkFBSUEseUJBQWdDLElBQWdDO0lBRTVEQSxJQUFJQSxJQUFJQSxHQUFHQSxJQUFJQSxDQUFDQSxNQUFNQSxDQUFDQTtJQUN2QkEsSUFBSUEsQ0FBQ0EsY0FBY0EsR0FBR0EsSUFBSUEsQ0FBQ0EsaUJBQWlCQSxDQUFDQTtBQUMvQ0EsQ0FBQ0E7QUFKYSx1QkFBZSxrQkFJNUIsQ0FBQSJ9

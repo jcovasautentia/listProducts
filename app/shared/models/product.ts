@@ -1,8 +1,9 @@
-export class Product {
+class Product {
   name: string;
   price: number;
-  photo: Object;//??
-  constructor() {
+  image: any;//??
+  constructor(name: string) {
 
   }
 }
+export = Product;

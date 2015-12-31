@@ -1,13 +1,15 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="loaded">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatedTo="pageNavigatedTo">
   <Page.actionBar>
         <ActionBar title="Añade un producto"></ActionBar>
     </Page.actionBar>
   <StackLayout orientation="vertical">
     <Label text="Nombre del producto" cssClass=""/>
-    <TextField hint="nombre" cssClass=""/>
+    <TextField text="{{ name }}" hint="nombre" cssClass=""/>
     <Label text="Precio (€)" cssClass=""/>
-    <TextField hint="0" cssClass=""/>
+    <TextField text="{{ price }}" hint="0" cssClass=""/>
     <Button text="Añadir Imagen" tap="selectImage"/>
+    <Image src="{{ image }}" />
     <Button text="Añadir producto" tap="goToList"/>
+
   </StackLayout>
 </Page>
