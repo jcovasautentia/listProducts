@@ -9,6 +9,11 @@ button {
     horizontal-align: center;
 }
 
+image {
+    width: 300;
+    height: 300;
+}
+
 .message {
     font-size: 20;
     color: #284848;

@@ -9,7 +9,7 @@
     <Label text="Precio (€)" cssClass=""/>
     <TextField text="{{ price }}" hint="0" cssClass=""/>
     <Button text="Añadir Imagen" tap="selectImage"/>
-    <Image src="{{ image }}" id="productImage" width="300" heigth="300"/>
+    <Image src="{{ image }}" id="productImage"/>
     <Button text="Añadir producto" tap="goToList"/>
 
   </StackLayout>

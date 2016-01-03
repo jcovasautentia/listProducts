@@ -1,9 +1,14 @@
 import observableModule = require("data/observable");
-import arrayObservableModule = require("data/observable-array");
+import list = require("../../shared/globalList");
+
+export function loaded(args: any){
+  console.log("loaded");
+  var page = args.object;
+  page.bindingContext = list;
 
 
+}
 export function pageNavigatedTo(args: observableModule.EventData) {
-    // Get the event sender
-    var page = args.object;
-    page.bindingContext = page.navigationContext;
+  console.log("---> " + args.object.name);
+  list.push(args.object);
   }

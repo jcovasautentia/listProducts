@@ -24,7 +24,7 @@ export function goToList() {
 
 export function selectImage(args: any) {
   cameraModule.takePicture({width: 300, height: 300, keepAspectRatio: true}).then(picture => {
-      console.log("Result is an image source instance");
+
       product.image.imageSource = picture;
   });
 }
