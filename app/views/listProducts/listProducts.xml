@@ -1,14 +1,15 @@
-<Page loaded="loaded" navigatedTo="pageNavigatedTo">
+<Page navigatedTo="pageNavigatedTo">
     <Page.actionBar>
         <ActionBar title="Products">
         </ActionBar>
     </Page.actionBar>
-    <StackLayout orientation="vertical">
-        <ListView items="{{ productsList }}" id="productsList" row="1" colSpan="2">
+    <StackLayout>
+        <ListView items="{{ productsList }}" id="productsList" row="1" colSpan="3">
             <ListView.itemTemplate>
                 <GridLayout columns="*, auto">
                     <Label text="{{ name }}"/>
                     <Label text="{{ price }}"/>
+                    <Image src="{{ image.imageSource }}" cssClass="smallImage" />
                 </GridLayout>
             </ListView.itemTemplate>
         </ListView>

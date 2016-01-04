@@ -8,7 +8,7 @@
     "files": [
         "app/app.ts",
         "app/references.d.ts",
-        "app/shared/globalList.ts",
+        "app/shared/models/globalList.ts",
         "app/shared/models/product.ts",
         "app/shared/models/productsList.ts",
         "app/views/addProduct/addProduct.ts",

@@ -14,6 +14,11 @@ image {
     height: 300;
 }
 
+.smallImage {
+    width: 60;
+    height: 60;
+}
+
 .message {
     font-size: 20;
     color: #284848;
