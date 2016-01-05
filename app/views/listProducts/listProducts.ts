@@ -6,42 +6,40 @@ import viewModule = require("ui/core/view");
 import imageModule = require("ui/image");
 import listViewModule = require("ui/list-view");
 
-var page;
+
+var page: any;
 var pageData = new observableModule.Observable({
     productsList: productsList
 });
-var productListView;
+var productListView: any;
 
-export function loaded(args: any){
-  console.log("loaded event");
-
-}
 export function pageNavigatingTo(args: observableModule.EventData) {
 
-  console.log("navigating to list");
-  page = <pages.Page>args.object;
-  page.bindingContext = pageData;
-  productListView = page.getViewById("productsListView");
+    console.log("navigating to list");
+    page = <pages.Page>args.object;
+    page.bindingContext = pageData;
+    productListView = page.getViewById("productsListView");
 
-  var product = new productModel();
-  product.name = page.navigationContext.name;
-  product.price = page.navigationContext.price;
-  product.image = page.navigationContext.image;
+    var product = new productModel();
+    product.name = page.navigationContext.name;
+    product.price = page.navigationContext.price;
+    product.image = page.navigationContext.image;
 
-  productsList.push(product);
-  productListView = page.getViewById("productsListView");
-  productListView.on(listViewModule.ListView.itemLoadingEvent, function (args) {
+    productsList.push(product);
+    productListView = page.getViewById("productsListView");
+    productListView.on(listViewModule.ListView.itemLoadingEvent, function(args) {
 
-    var image = args.view.getViewById("image");
-    
-    image.on(viewModule.View.loadedEvent, function (args: observableModule.EventData) {
-      (<viewModule.View>args.object).animate({
-        opacity:0,
-        duration: 3000
-        }).then(function () {
-            return (<viewModule.View>args.object).animate({opacity: 1, duration: 2000})
-          });
-      });
-  });
+        var image = args.view.getViewById("image");
+
+        image.on(viewModule.View.loadedEvent, function(args: observableModule.EventData) {
+            productListView.refresh();
+            (<viewModule.View>args.object).translateX = -1000;
+            (<viewModule.View>args.object).animate({ translate: { x: 0, y: 0 }, opacity: 1 });
+
+        });
+        // image.on(listViewModule.ListView.loadMoreItemsEvent, function (args: observableModule.EventData) {
+        //   (<viewModule.View>args.object).animate({ translate: { x: 0, y: 0 }, opacity: 1 });
+        //   });
+    });
 
 }

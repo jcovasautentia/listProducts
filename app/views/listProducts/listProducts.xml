@@ -6,11 +6,11 @@
     <StackLayout orientation="horizontal">
         <ListView items="{{ productsList }}" id="productsListView" row="1" colSpan="3">
             <ListView.itemTemplate>
-                <StackLayout id="productData" orientation="horizontal">
-                    <Label text="{{ name }}"/>
-                    <Label text="{{ price }}"/>
-                    <Image src="{{ image }}" cssClass="smallImage" id="image"/>
-                </StackLayout>
+                <GridLayout id="productData" columns="80, *, *">
+                    <Label text="{{ name }}" row="0" col="0"/>
+                    <Label text="{{ price }}" row="0" col="1"/>
+                    <Image src="{{ image }}" cssClass="smallImage" id="image" row="0" col="2"/>
+                </GridLayout>
             </ListView.itemTemplate>
         </ListView>
     </StackLayout>

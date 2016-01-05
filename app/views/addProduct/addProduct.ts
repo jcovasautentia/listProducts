@@ -13,37 +13,38 @@ var imageView;
 var anim;
 
 export function loaded(args: any) {
-  page = args.object;
-  page.bindingContext = product;
-  imageView = <imageModule.Image>page.getViewById("productImage");
+    page = args.object;
+    page.bindingContext = product;
+    imageView = <imageModule.Image>page.getViewById("productImage");
 
-  console.log("addProduct view loaded");
+    console.log("addProduct view loaded");
 
 }
 
-export function animateImage(){
-  imageView.animate({
-    opacity:0,
-    duration: 3000
-  }).then( function(){ return imageView.animate({opacity: 1, duration: 2000});
-});
+export function animateImage() {
+    imageView.animate({
+        opacity: 0,
+        duration: 3000
+    }).then(function() {
+        return imageView.animate({ opacity: 1, duration: 2000 });
+    });
 }
 
 export function goToList() {
-  console.log("a la lista con la info " + product.name + ", " + product.price);
-  var topmost = frameModule.topmost();
-  var navigationEntry = {
-    moduleName: "views/listProducts/listProducts",
-    context: product,
-    animated: true
-  }
-  topmost.navigate(navigationEntry);
+    console.log("a la lista con la info " + product.name + ", " + product.price);
+    var topmost = frameModule.topmost();
+    var navigationEntry = {
+        moduleName: "views/listProducts/listProducts",
+        context: product,
+        animated: true
+    }
+    topmost.navigate(navigationEntry);
 }
 
 export function selectImage(args: any) {
-  cameraModule.takePicture({width: 300, height: 300, keepAspectRatio: true}).then(pictureSource => {
-    product.image = pictureSource;
-    imageView.imageSource = pictureSource;//por que es necesario?? quizas esta acción no sucede
-    // en la vista sino en la camara y por tanto no funciona el "two-way binding"
-  });
+    cameraModule.takePicture({ width: 300, height: 300, keepAspectRatio: true }).then(pictureSource => {
+        product.image = pictureSource;
+        imageView.imageSource = pictureSource;//por que es necesario?? quizas esta acción no sucede
+        // en la vista sino en la camara y por tanto no funciona el "two-way binding"
+    });
 };
