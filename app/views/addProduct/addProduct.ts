@@ -1,18 +1,33 @@
-import observableModule = require("data/observable");
 import frameModule = require("ui/frame");
-import ProductModel = require("../../shared/models/product");
+import pageModule = require("ui/page");
 import imageModule = require("ui/image");
+
+import observableModule = require("data/observable");
 import cameraModule = require("camera");
 
+import ProductModel = require("../../shared/models/product");
+
 var page;
-var product = new ProductModel("prueba");//TODO eliminar despues de las pruebas
+var product = new ProductModel();
+var imageView;
+var anim;
 
 export function loaded(args: any) {
   page = args.object;
   page.bindingContext = product;
-  //product.image = page.getViewById("productImage");
-  console.log("vista cargada " + product.name);
-};
+  imageView = <imageModule.Image>page.getViewById("productImage");
+
+  console.log("addProduct view loaded");
+
+}
+
+export function animateImage(){
+  imageView.animate({
+    opacity:0,
+    duration: 3000
+  }).then( function(){ return imageView.animate({opacity: 1, duration: 2000});
+});
+}
 
 export function goToList() {
   console.log("a la lista con la info " + product.name + ", " + product.price);
@@ -23,13 +38,12 @@ export function goToList() {
     animated: true
   }
   topmost.navigate(navigationEntry);
-};
+}
 
 export function selectImage(args: any) {
-  cameraModule.takePicture({width: 300, height: 300, keepAspectRatio: true}).then(picture => {
-
-    product.image = new imageModule.Image();
-    product.image.imageSource = picture;
-    page.getViewById("productImage").imageSource = picture; 
+  cameraModule.takePicture({width: 300, height: 300, keepAspectRatio: true}).then(pictureSource => {
+    product.image = pictureSource;
+    imageView.imageSource = pictureSource;//por que es necesario?? quizas esta acción no sucede
+    // en la vista sino en la camara y por tanto no funciona el "two-way binding"
   });
-}
+};

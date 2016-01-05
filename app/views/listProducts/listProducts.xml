@@ -1,16 +1,16 @@
-<Page navigatedTo="pageNavigatedTo">
+<Page loaded="loaded" navigatingTo="pageNavigatingTo">
     <Page.actionBar>
         <ActionBar title="Products">
         </ActionBar>
     </Page.actionBar>
-    <StackLayout>
-        <ListView items="{{ productsList }}" id="productsList" row="1" colSpan="3">
+    <StackLayout orientation="horizontal">
+        <ListView items="{{ productsList }}" id="productsListView" row="1" colSpan="3">
             <ListView.itemTemplate>
-                <GridLayout columns="*, auto">
+                <StackLayout id="productData" orientation="horizontal">
                     <Label text="{{ name }}"/>
                     <Label text="{{ price }}"/>
-                    <Image src="{{ image.imageSource }}" cssClass="smallImage" />
-                </GridLayout>
+                    <Image src="{{ image }}" cssClass="smallImage" id="image"/>
+                </StackLayout>
             </ListView.itemTemplate>
         </ListView>
     </StackLayout>

@@ -4,9 +4,8 @@ class Product extends observableModule.Observable {
   name: string;
   price: number;
   image: any;
-  constructor(name: string) {
+  constructor() {
     super();
-    this.name = name;
   }
 }
 export = Product;
