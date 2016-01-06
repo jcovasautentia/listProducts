@@ -32,7 +32,7 @@ export function pageNavigatingTo(args: observableModule.EventData) {
         var image = args.view.getViewById("image");
 
         image.on(viewModule.View.loadedEvent, function(args: observableModule.EventData) {
-            productListView.refresh();
+
             (<viewModule.View>args.object).translateX = -1000;
             (<viewModule.View>args.object).animate({ translate: { x: 0, y: 0 }, opacity: 1 });
 
