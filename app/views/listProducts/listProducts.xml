@@ -6,7 +6,7 @@
     <StackLayout orientation="horizontal">
         <ListView items="{{ productsList }}" id="productsListView" row="1" colSpan="3">
             <ListView.itemTemplate>
-                <GridLayout id="productData" columns="80, *, *">
+                <GridLayout id="productData" columns="*, *, *">
                     <Label text="{{ name }}" row="0" col="0"/>
                     <Label text="{{ price }}" row="0" col="1"/>
                     <Image src="{{ image }}" cssClass="smallImage" id="image" row="0" col="2"/>

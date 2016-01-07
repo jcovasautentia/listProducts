@@ -33,19 +33,22 @@ export function animateImage() {
 
 export function goToList() {
 
-  if (isNaN(product.price)) {
-    uidialogsModule.alert("Introduce un precio valido");
-  }
-  else{
-    console.log("a la lista con la info " + product.name + ", " + product.price);
-    var topmost = frameModule.topmost();
-    var navigationEntry = {
-        moduleName: "views/listProducts/listProducts",
-        context: product,
-        animated: true
+    if (isNaN(product.price)) {
+        uidialogsModule.alert("Introduce un precio valido");
     }
-    topmost.navigate(navigationEntry);
-  }
+    else if ( (product.name === undefined) || (product.name == "") ) {
+        uidialogsModule.alert("Introduce un nombre para el producto");
+    }
+    else {
+        console.log("a la lista con la info " + product.name + ", " + product.price);
+        var topmost = frameModule.topmost();
+        var navigationEntry = {
+            moduleName: "views/listProducts/listProducts",
+            context: product,
+            animated: true
+        }
+        topmost.navigate(navigationEntry);
+    }
 }
 
 export function selectImage(args: any) {

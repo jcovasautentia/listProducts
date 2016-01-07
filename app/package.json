@@ -16,11 +16,12 @@
     "url":"https://github.com/jcovasautentia/listProducts.git"
   },
   "bugs":{
-    "url":"https://github.com/jcovasautentia/listProducts.gitissues"
+    "url":"https://github.com/jcovasautentia/listProducts.git/issues"
   },
   "homepage":"",
-  "android":{
-    "v8Flags":"--expose_gc"
+  "android": {
+    "v8Flags" : "--nolazy --expose_gc",
+    "codeCache" : "true"
   },
   "readme":"ERROR: No README data found!",
   "_id":"tns-template-hello-world@1.5.1",
