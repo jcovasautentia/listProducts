@@ -7,6 +7,7 @@ import imageModule = require("ui/image");
 import listViewModule = require("ui/list-view");
 
 
+
 var page: any;
 var pageData = new observableModule.Observable({
     productsList: productsList

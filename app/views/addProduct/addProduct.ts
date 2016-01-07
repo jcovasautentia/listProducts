@@ -1,6 +1,7 @@
 import frameModule = require("ui/frame");
 import pageModule = require("ui/page");
 import imageModule = require("ui/image");
+import uidialogsModule = require("ui/dialogs");
 
 import observableModule = require("data/observable");
 import cameraModule = require("camera");
@@ -31,6 +32,11 @@ export function animateImage() {
 }
 
 export function goToList() {
+
+  if (isNaN(product.price)) {
+    uidialogsModule.alert("Introduce un precio valido");
+  }
+  else{
     console.log("a la lista con la info " + product.name + ", " + product.price);
     var topmost = frameModule.topmost();
     var navigationEntry = {
@@ -39,6 +45,7 @@ export function goToList() {
         animated: true
     }
     topmost.navigate(navigationEntry);
+  }
 }
 
 export function selectImage(args: any) {
